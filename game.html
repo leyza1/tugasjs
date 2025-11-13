@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Tebak Angka - Lesa</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #a0e3ff, #f8bfff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    h1 {
+      background: -webkit-linear-gradient(#0078ff, #7f00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #7f00ff; }
+      to { text-shadow: 0 0 15px #0078ff; }
+    }
+
+    .card {
+      background: #ffffffcc;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      border: 2px solid #7f00ff;
+      border-radius: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      background: linear-gradient(135deg, #0078ff, #7f00ff);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #7f00ff;
+    }
+
+    #hasil {
+      margin-top: 15px;
+      font-size: 1.1em;
+      font-weight: bold;
+      min-height: 30px;
+    }
+
+    #percobaan {
+      color: #444;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Game Tebak Angka</h1>
+  <div class="card">
+    <p>Tebak angka rahasia antara <b>1 - 20</b>!</p>
+    <input type="number" id="tebakan" placeholder="Masukkan angka kamu">
+    <div>
+      <button onclick="tebakAngka()">Tebak!</button>
+      <button onclick="resetGame()">Ulangi 🔄</button>
+    </div>
+    <p id="hasil"></p>
+    <p id="percobaan">Percobaan: 0</p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
